@@ -48,7 +48,7 @@ public class Menu implements data_interfce {
     public void start() {
 
 
-        if (this.previousOrder != null) System.out.println(this.previousOrder + " 가 장바구니에 추가되었습니다.\n");
+        if (this.previousOrder != null) System.out.println("*******"+this.previousOrder + " 가 장바구니에 추가되었습니다.*******\n");
 
 
         System.out.println("BURGER_KING 메뉴판을 보시고 메뉴를 선택해 주세요\n" +
@@ -97,6 +97,7 @@ public class Menu implements data_interfce {
         }
         //↓ 5번 메뉴 처리
         else if (num == 5) {
+            this.previousOrder = null;
             //장바구니 안 비어있을때
             if(!order.basket.isEmpty()) {
                 BigDecimal total = new BigDecimal("0");
@@ -151,6 +152,7 @@ public class Menu implements data_interfce {
         }
         //↓ 6번 메뉴 처리
         else if (num == 6) {
+            this.previousOrder = null;
             //장바구니 안 비어있을때
             if(!order.basket.isEmpty()) {
                 System.out.println("진행하던 주문을 취소하시겠습니까?");
@@ -182,6 +184,7 @@ public class Menu implements data_interfce {
         }
         //↓ 7번 누적 판매금액 출력문
         else if (num == 7) {
+            this.previousOrder = null;
             System.out.println("[ 총 판매금액 현황 ]");
             System.out.println("현재까지 총 판매된 금액은 [ W "+this.accumulatedAmount+"] 입니다.");
             System.out.println("아무 숫자 누르시면 메뉴판으로");
@@ -191,6 +194,7 @@ public class Menu implements data_interfce {
         }
         //↓ 8번 누적 메뉴 출력문
         else{
+            this.previousOrder = null;
             System.out.println("[ 총 판매상품 목록 현황 ]");
             System.out.println("현재까지 총 판매된 상품 목록은 아래와 같습니다.");
             for (List list:this.accumulatedMenu) {
